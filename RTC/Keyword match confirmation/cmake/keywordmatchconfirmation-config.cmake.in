@@ -1,0 +1,54 @@
+# KeywordMatchConfirmation CMake config file
+#
+# This file sets the following variables:
+# KeywordMatchConfirmation_FOUND - Always TRUE.
+# KeywordMatchConfirmation_INCLUDE_DIRS - Directories containing the KeywordMatchConfirmation include files.
+# KeywordMatchConfirmation_IDL_DIRS - Directories containing the KeywordMatchConfirmation IDL files.
+# KeywordMatchConfirmation_LIBRARIES - Libraries needed to use KeywordMatchConfirmation.
+# KeywordMatchConfirmation_DEFINITIONS - Compiler flags for KeywordMatchConfirmation.
+# KeywordMatchConfirmation_VERSION - The version of KeywordMatchConfirmation found.
+# KeywordMatchConfirmation_VERSION_MAJOR - The major version of KeywordMatchConfirmation found.
+# KeywordMatchConfirmation_VERSION_MINOR - The minor version of KeywordMatchConfirmation found.
+# KeywordMatchConfirmation_VERSION_REVISION - The revision version of KeywordMatchConfirmation found.
+# KeywordMatchConfirmation_VERSION_CANDIDATE - The candidate version of KeywordMatchConfirmation found.
+
+message(STATUS "Found KeywordMatchConfirmation-@PROJECT_VERSION@")
+set(KeywordMatchConfirmation_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(KeywordMatchConfirmation_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(KeywordMatchConfirmation_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(KeywordMatchConfirmation_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(KeywordMatchConfirmation_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(KeywordMatchConfirmation_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(KeywordMatchConfirmation_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(KeywordMatchConfirmation_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(KeywordMatchConfirmation_VERSION @PROJECT_VERSION@)
+set(KeywordMatchConfirmation_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(KeywordMatchConfirmation_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(KeywordMatchConfirmation_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(KeywordMatchConfirmation_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
