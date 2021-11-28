@@ -1,0 +1,54 @@
+# WebScraping1 CMake config file
+#
+# This file sets the following variables:
+# WebScraping1_FOUND - Always TRUE.
+# WebScraping1_INCLUDE_DIRS - Directories containing the WebScraping1 include files.
+# WebScraping1_IDL_DIRS - Directories containing the WebScraping1 IDL files.
+# WebScraping1_LIBRARIES - Libraries needed to use WebScraping1.
+# WebScraping1_DEFINITIONS - Compiler flags for WebScraping1.
+# WebScraping1_VERSION - The version of WebScraping1 found.
+# WebScraping1_VERSION_MAJOR - The major version of WebScraping1 found.
+# WebScraping1_VERSION_MINOR - The minor version of WebScraping1 found.
+# WebScraping1_VERSION_REVISION - The revision version of WebScraping1 found.
+# WebScraping1_VERSION_CANDIDATE - The candidate version of WebScraping1 found.
+
+message(STATUS "Found WebScraping1-@PROJECT_VERSION@")
+set(WebScraping1_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(WebScraping1_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(WebScraping1_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(WebScraping1_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(WebScraping1_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(WebScraping1_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(WebScraping1_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(WebScraping1_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(WebScraping1_VERSION @PROJECT_VERSION@)
+set(WebScraping1_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(WebScraping1_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(WebScraping1_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(WebScraping1_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
