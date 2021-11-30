@@ -222,7 +222,7 @@ class JudgeTheElement(OpenRTM_aist.DataFlowComponentBase):
 			self.name = self._d_name.data
 
 		if self.t != self.element1:
-			if self.element2 == "start":
+			if self.element2 == "スタート":
 				if self.element1 != "":
 
 				
