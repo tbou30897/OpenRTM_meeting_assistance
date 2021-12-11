@@ -1,0 +1,43 @@
+2021-12-10 11:38:39,163 file.manager INFO 1.2.1
+2021-12-10 11:38:39,163 file.manager INFO Copyright (C) 2003-2010
+2021-12-10 11:38:39,163 file.manager INFO   Noriaki Ando
+2021-12-10 11:38:39,163 file.manager INFO   Intelligent Systems Research Institute, AIST
+2021-12-10 11:38:39,163 file.manager INFO Manager starting.
+2021-12-10 11:38:39,163 file.manager INFO Starting local logging.
+2021-12-10 11:38:39,193 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2021-12-10 11:38:43,271 file.ManagerServant INFO Master manager not found
+2021-12-10 11:38:43,277 file.LocalServiceAdmin INFO All the local services are enabled.
+2021-12-10 11:38:43,285 file.manager INFO Component type conf file: WebScraping1.conf loaded.
+2021-12-10 11:38:43,294 file.ec_base INFO setRate(1000000.000000) done
+2021-12-10 11:38:43,294 file.ec_base INFO setRate(1000.000000) done
+2021-12-10 11:38:43,294 file.rtobject INFO 1 execution context was created.
+2021-12-10 11:38:43,295 file.rtobject INFO Initial active configuration set is default.
+2021-12-10 11:38:46,954 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2021-12-10 11:38:46,954 file.SdoServiceAdmin ERROR type  already exists.
+2021-12-10 11:38:48,385 file.ec_base WARNING The component is not responding.
+2021-12-10 11:38:48,386 file.ec_base ERROR Unknown error: Invalid state transition.
+2021-12-10 11:38:49,022 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Users\tbou3\AppData\Local\Programs\Python\Python37\lib\site-packages\OpenRTM_aist\RTObject.py", line 1330, in on_activated
+    ret = self.onActivated(ec_id)
+  File "C:\Users\tbou3\workspace\WebScraping1\WebScraping1.py", line 187, in onActivated
+    self.driver.get(self._url)
+  File "C:\Users\tbou3\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "C:\Users\tbou3\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\tbou3\AppData\Local\Programs\Python\Python37\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: chrome=96.0.4664.93)
+
+
+2021-12-10 11:38:49,035 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Users\tbou3\AppData\Local\Programs\Python\Python37\lib\site-packages\OpenRTM_aist\RTObject.py", line 1370, in on_deactivated
+    ret = self.onDeactivated(ec_id)
+  File "C:\Users\tbou3\workspace\WebScraping1\WebScraping1.py", line 207, in onDeactivated
+    driver.close()
+NameError: name 'driver' is not defined
+
+2021-12-10 11:38:58,142 file.ManagerServant INFO Master manager not found
+2021-12-10 11:39:13,004 file.ManagerServant INFO Master manager not found
+2021-12-10 11:39:27,851 file.ManagerServant INFO Master manager not found

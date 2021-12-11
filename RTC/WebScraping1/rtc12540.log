@@ -1,0 +1,37 @@
+2021-12-10 11:26:36,994 file.manager INFO 1.2.1
+2021-12-10 11:26:36,994 file.manager INFO Copyright (C) 2003-2010
+2021-12-10 11:26:36,994 file.manager INFO   Noriaki Ando
+2021-12-10 11:26:36,994 file.manager INFO   Intelligent Systems Research Institute, AIST
+2021-12-10 11:26:36,994 file.manager INFO Manager starting.
+2021-12-10 11:26:36,994 file.manager INFO Starting local logging.
+2021-12-10 11:26:41,086 file.manager.namingmanager INFO NameServer connection failed: corba/localhost
+2021-12-10 11:26:45,186 file.ManagerServant INFO Master manager not found
+2021-12-10 11:26:45,188 file.LocalServiceAdmin INFO All the local services are enabled.
+2021-12-10 11:26:45,190 file.manager INFO Component type conf file: WebScraping1.conf loaded.
+2021-12-10 11:26:45,192 file.ec_base INFO setRate(1000000.000000) done
+2021-12-10 11:26:45,192 file.ec_base INFO setRate(1000.000000) done
+2021-12-10 11:26:45,192 file.rtobject INFO 1 execution context was created.
+2021-12-10 11:26:45,193 file.rtobject INFO Initial active configuration set is default.
+2021-12-10 11:26:51,760 file.manager.namingmanager INFO NameServer connection succeeded: corba/localhost
+2021-12-10 11:26:51,760 file.manager.namingmanager INFO Connected to a name server: corba/localhost
+2021-12-10 11:26:58,878 file.SdoServiceAdmin WARNING No available SDO service in the factory: 
+2021-12-10 11:26:58,878 file.SdoServiceAdmin ERROR type  already exists.
+2021-12-10 11:27:00,072 file.ManagerServant INFO Master manager not found
+2021-12-10 11:27:00,890 file.ec_base WARNING The component is not responding.
+2021-12-10 11:27:00,891 file.ec_base ERROR Unknown error: Invalid state transition.
+2021-12-10 11:27:04,655 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Users\tbou3\AppData\Local\Programs\Python\Python37\lib\site-packages\OpenRTM_aist\RTObject.py", line 1571, in on_execute
+    ret = self.onExecute(ec_id)
+  File "C:\Users\tbou3\workspace\WebScraping1\WebScraping1.py", line 223, in onExecute
+    tex = element2.text
+AttributeError: 'str' object has no attribute 'text'
+
+2021-12-10 11:27:04,656 file.rtobject ERROR Traceback (most recent call last):
+  File "C:\Users\tbou3\AppData\Local\Programs\Python\Python37\lib\site-packages\OpenRTM_aist\RTObject.py", line 1370, in on_deactivated
+    ret = self.onDeactivated(ec_id)
+  File "C:\Users\tbou3\workspace\WebScraping1\WebScraping1.py", line 207, in onDeactivated
+    driver.close()
+NameError: name 'driver' is not defined
+
+2021-12-10 11:27:14,938 file.ManagerServant INFO Master manager not found
+2021-12-10 11:27:16,763 file.SdoServiceAdmin INFO SDO service has been deleted: 886a224f-bb71-4933-8c14-f99ca88cd7f9
