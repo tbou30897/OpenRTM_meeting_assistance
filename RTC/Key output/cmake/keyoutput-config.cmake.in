@@ -1,0 +1,54 @@
+# KeyOutput CMake config file
+#
+# This file sets the following variables:
+# KeyOutput_FOUND - Always TRUE.
+# KeyOutput_INCLUDE_DIRS - Directories containing the KeyOutput include files.
+# KeyOutput_IDL_DIRS - Directories containing the KeyOutput IDL files.
+# KeyOutput_LIBRARIES - Libraries needed to use KeyOutput.
+# KeyOutput_DEFINITIONS - Compiler flags for KeyOutput.
+# KeyOutput_VERSION - The version of KeyOutput found.
+# KeyOutput_VERSION_MAJOR - The major version of KeyOutput found.
+# KeyOutput_VERSION_MINOR - The minor version of KeyOutput found.
+# KeyOutput_VERSION_REVISION - The revision version of KeyOutput found.
+# KeyOutput_VERSION_CANDIDATE - The candidate version of KeyOutput found.
+
+message(STATUS "Found KeyOutput-@PROJECT_VERSION@")
+set(KeyOutput_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(KeyOutput_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(KeyOutput_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(KeyOutput_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(KeyOutput_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(KeyOutput_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(KeyOutput_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(KeyOutput_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(KeyOutput_VERSION @PROJECT_VERSION@)
+set(KeyOutput_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(KeyOutput_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(KeyOutput_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(KeyOutput_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
